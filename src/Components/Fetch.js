@@ -31,7 +31,8 @@ class Exp extends Component {
       <div>
        <ul>{pins.map(pin =>(
          <li key={pin.id}>
-         {pin.title}></li>
+         {pin.title}
+         <img src={pin.url}/></li>
        ))}</ul>
       </div>
     );
