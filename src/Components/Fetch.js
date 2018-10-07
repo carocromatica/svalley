@@ -29,14 +29,15 @@ class Exp extends Component {
 
     return (
       <div className ="row">
-      <div className="column">
        {pins.map(pin =>( 
-         
+         <div className="column">
          <img src={pin.thumbnailUrl}/>
-         
+         <p>{pin.title}</p>
+         <button>pin it!</button>
+         </div>
        ))}
       </div>
-      </div>
+
     );
   }
 }

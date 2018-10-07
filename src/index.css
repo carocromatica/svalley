@@ -29,8 +29,8 @@ code {
 
 /* Create four equal columns that sits next to each other */
 .column {
-  -ms-flex: 25%; /* IE10 */
-  flex: 100%;
+  -ms-flex: 100%; /* IE10 */
+  flex: 20%;
   max-width: 100%;
   padding: 0 4px;
 }
