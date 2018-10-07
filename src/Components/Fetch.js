@@ -28,12 +28,14 @@ class Exp extends Component {
     let { pins } = this.state;
 
     return (
-      <div>
-       <ul>{pins.map(pin =>(
-         <li key={pin.id}>
-         {pin.title}
-         <img src={pin.url}/></li>
-       ))}</ul>
+      <div className ="row">
+      <div className="column">
+       {pins.map(pin =>( 
+         
+         <img src={pin.thumbnailUrl}/>
+         
+       ))}
+      </div>
       </div>
     );
   }
