@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-
 class LoadPins extends Component {
   
   render() {
@@ -10,25 +9,23 @@ class LoadPins extends Component {
 
     if (pins) {
       imageListContent = (
-        <div>
+        <div className="row">
           {pins.map(img => (
-            <div>
-           
-              <img src={img.largeImageURL} alt="" />
+
+            <div className="column">
+              <img src={img.webformatURL} alt="" />
+              <p>{img.tags}</p>
             </div>
+           
           ))}
         </div>
       );
     } else {
       imageListContent = null;
     }
-
-
     return (
       <div>
         {imageListContent}
-     
-
       </div>
     );
   }

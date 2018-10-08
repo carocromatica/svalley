@@ -7,7 +7,7 @@ import LoadPins from './Components/Pins'
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="content">
       <div>
      <NavHead />
      <SearchBar />

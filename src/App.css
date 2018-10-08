@@ -1,32 +1,58 @@
-.App {
-  text-align: center;
+
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+body {
+  margin: 0;
+  font-family: Arial;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.content{
+  margin:0 auto;
+  width: 98%;
 }
 
-.App-link {
-  color: #61dafb;
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex-fluid;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 15%; /* IE10 */
+  flex: 15%;
+  max-width: 15%;
+  background-color:#ecf0f1;
+  margin: 10px;
+  border-radius: 25px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
   }
 }

@@ -2,32 +2,29 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import LoadPins from './Pins'
 
-
 class SearchBar extends Component {
   
   state = {
-    searchText: '',
-    amount:20,
+    inputText: '',
+    amount:200,
     apiUrl:'https://pixabay.com/api/',
     apiKey:'1721901-fa9bcc6ed3f879da0567a53bb',
     pins:[]
   };
 
   onTextChange = e => {
-    const val = e.target.value;
-    this.setState({ [e.target.name]: val }, () => {
-      if (val === '') {
+    const input = e.target.value;
+    this.setState({ [e.target.name]: input }, () => {
+      if (input === '') {
         axios
         .get(
-          `${this.state.apiUrl}/?key=${this.state.apiKey}&q=star&image_type=photo&per_page=${this.state.amount}&safesearch=true`
-        )
+          `${this.state.apiUrl}/?key=${this.state.apiKey}&q=flower&orientation=vertical&image_type=photo&per_page=${this.state.amount}&safesearch=true`)
         .then(res => this.setState({ pins: res.data.hits }))
         .catch(err => console.log(err));
       } else {
         axios
           .get(
-            `${this.state.apiUrl}/?key=${this.state.apiKey}&q=${this.state.searchText}&image_type=photo&per_page=${this.state.amount}&safesearch=true`
-          )
+            `${this.state.apiUrl}/?key=${this.state.apiKey}&q=${this.state.inputText}&orientation=vertical&image_type=photo&per_page=${this.state.amount}&safesearch=true`)
           .then(res => this.setState({ pins: res.data.hits }))
           .catch(err => console.log(err));
       }
@@ -39,16 +36,11 @@ class SearchBar extends Component {
     return (
       <div>
         <input
-          name="searchText"
-          value={this.state.searchText}
-          onChange={this.onTextChange}
-        />
-
-        {this.state.pins.length > 0 ? ( <LoadPins pins={this.state.pins} /> ) : null}
+          name="inputText" value={this.state.inputText} onChange={this.onTextChange}/>
+         <LoadPins pins={this.state.pins} /> 
       </div>
     );
   }
-
 }
 
 export default SearchBar;
