@@ -6,11 +6,13 @@ class Exp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pins: [],
-      load: false
+      inputText:'',
+      amount:20,
+      apiUrl:'https://pixabay.com/api/',
+      apiKey:'1721901-fa9bcc6ed3f879da0567a53bb',
+      pins:[]
     }
   }
-  
 
     componentDidMount() {
 

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import NavHead from './NavHead';
 import SearchBar from './Searchbar';
 
+import LoadPins from './Pins'
+
 class MainApp extends Component {
   render() {
     return (
@@ -9,6 +11,11 @@ class MainApp extends Component {
      <NavHead />
    
      <SearchBar />
+
+     <LoadPins />
+
+  
+
     
      </div>
     );

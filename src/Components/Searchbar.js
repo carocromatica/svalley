@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import LoadPins from './Pins'
 
 
 class SearchBar extends Component {
@@ -34,7 +35,10 @@ onTextChange = e =>{
         
         type="text" placeholder="Búsqueda.."/>
       
+         
+    {this.state.pins.lenght > 0 ? (<LoadPins pins={this.state.pins} />) : null}
       </div>
+     
     );
   }
 }
