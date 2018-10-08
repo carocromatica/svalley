@@ -6,12 +6,12 @@ class LoadPins extends Component {
   
   render() {
     let imageListContent;
-    const { images } = this.props;
+    const { pins } = this.props;
 
-    if (images) {
+    if (pins) {
       imageListContent = (
         <div>
-          {images.map(img => (
+          {pins.map(img => (
             <div>
            
               <img src={img.largeImageURL} alt="" />
@@ -35,7 +35,7 @@ class LoadPins extends Component {
 }
 
 LoadPins.propTypes = {
-  images: PropTypes.array.isRequired
+  pins: PropTypes.array.isRequired
 };
 
 export default LoadPins;
