@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 class LoadPins extends Component {
 
-
   state = {
     open: false,
     currentImg: ''
@@ -12,11 +11,6 @@ class LoadPins extends Component {
   handleOpen = img => {
     this.setState({ open: true, currentImg: img });
   };
-
-  handleClose = () => {
-    this.setState({ open: false });
-  };
-
 
   render() {
     let imageListContent;
