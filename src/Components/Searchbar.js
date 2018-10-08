@@ -12,6 +12,8 @@ class SearchBar extends Component {
     pins:[]
   };
 
+  
+
   onTextChange = e => {
     const input = e.target.value;
     this.setState({ [e.target.name]: input }, () => {
