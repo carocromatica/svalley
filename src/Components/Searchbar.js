@@ -10,7 +10,7 @@ class SearchBar extends Component {
 
   state = {
     inputText: '',
-    amount: 200,
+    amount: 100,
     apiUrl: 'https://pixabay.com/api/',
     apiKey: '1721901-fa9bcc6ed3f879da0567a53bb',
     pins: [],
@@ -26,10 +26,9 @@ class SearchBar extends Component {
       .catch(err => console.log(err));
   }
 
-  handleOpen = img => {
-    this.setState({ open: true, currentImg: img });
+  handleOpen = pin => {
+    this.setState({ open: true, currentImg: pin });
   };
-  
 
   changeW() {
     axios
@@ -39,18 +38,18 @@ class SearchBar extends Component {
       .catch(err => console.log(err));
   }
 
-  changecats() {
+  changedesign() {
     axios
       .get(
-        `${this.state.apiUrl}/?key=${this.state.apiKey}&q=cats&orientation=vertical&image_type=photo&per_page=${this.state.amount}&safesearch=true`)
+        `${this.state.apiUrl}/?key=${this.state.apiKey}&q=creative&orientation=vertical&image_type=photon&per_page=${this.state.amount}&order=popular&safesearch=true`)
       .then(res => this.setState({ pins: res.data.hits }))
       .catch(err => console.log(err));
   }
 
-  changedogs() {
+  changearch() {
     axios
       .get(
-        `${this.state.apiUrl}/?key=${this.state.apiKey}&q=dogs&orientation=vertical&image_type=photo&per_page=${this.state.amount}&safesearch=true`)
+        `${this.state.apiUrl}/?key=${this.state.apiKey}&q=architecture&orientation=vertical&image_type=photo&per_page=${this.state.amount}&safesearch=true`)
       .then(res => this.setState({ pins: res.data.hits }))
       .catch(err => console.log(err));
 
@@ -80,23 +79,31 @@ class SearchBar extends Component {
     let { pins } = this.state;
     return (
       <div>
-        <input
-          name="inputText" value={this.state.inputText} onChange={this.onTextChange} />
-
+        <input name="inputText" value={this.state.inputText} onChange={this.onTextChange} />
         <div>
           <button onClick={this.changeW.bind(this)}>inicio</button>
-          <button onClick={this.changecats.bind(this)}>gatos</button>
-          <button onClick={this.changedogs.bind(this)}>perros</button>
+          <button onClick={this.changedesign.bind(this)}>Design</button>
+          <button onClick={this.changearch.bind(this)}>Architecture</button>
           <div className="row">
             {pins.map(pin => (
               <div className="column">
+              <a href="#popup" class="popup-link" onClick={() => this.handleOpen(pin.webformatURL)} >
                 <img src={pin.webformatURL} />
+                </a>
               </div>
             ))}
           </div>
         </div>
         <div>
         </div>
+
+        <div class="modal-wrapper" id="popup">
+          <div class="popup-contenedor">
+          <img src={this.state.currentImg} alt="" style={{ width: '50%' }} />
+            <a class="popup-cerrar" href="#">X</a>
+          </div>
+        </div>
+
       </div>
     );
   }
