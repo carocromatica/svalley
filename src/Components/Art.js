@@ -16,7 +16,6 @@ class Art extends Component {
 
 };
 
-
 changeGallery(){
   axios
     .get(
@@ -24,9 +23,7 @@ changeGallery(){
     .then(res => this.setState({ pins: res.data.hits }))
     .catch(err => console.log(err));
 
-
 }
-
 
 
  render(){
@@ -46,8 +43,7 @@ changeGallery(){
 
   );
   }
-
-
+  
 }
 
 export default Art;

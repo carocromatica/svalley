@@ -17,7 +17,7 @@ class Watercolors extends Component {
 };
 
 
-changeGallery(){
+changeW(){
   axios
     .get(
       `${this.state.apiUrl}/?key=${this.state.apiKey}&q=watercolors&orientation=vertical&image_type=photo&per_page=${this.state.amount}&safesearch=true`)
@@ -33,7 +33,7 @@ changeGallery(){
 
   return (
     <div>
-      <button onClick={this.changeGallery.bind(this)}>inicio</button>
+    <button onClick={this.changeW.bind(this)}>inicio</button>
     <div className ="row">
      {pins.map(pin =>( 
        <div className="column">
