@@ -22,7 +22,7 @@ class LoadPins extends Component {
           {pins.map(img => (
             <div className="column">
               <a href="#popup" class="popup-link" onClick={() => this.handleOpen(img.webformatURL)} > <img src={img.webformatURL} alt="" />
-              </a><p>{img.tags}</p>
+              </a>
             </div>
 
           ))}
@@ -39,6 +39,10 @@ class LoadPins extends Component {
         <div class="modal-wrapper" id="popup">
           <div class="popup-contenedor">
           <img src={this.state.currentImg} alt="" style={{ width: '50%' }} />
+          <div>
+          {imageListContent}
+        </div>
+
             <a class="popup-cerrar" href="#">X</a>
           </div>
         </div>

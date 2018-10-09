@@ -14,7 +14,7 @@ class Exp extends Component {
 
     componentDidMount() {
 
-      fetch('https://jsonplaceholder.typicode.com/photos')
+      fetch('')
         .then(resp => resp.json())
         .then(json => {
           this.setState({
@@ -32,8 +32,7 @@ class Exp extends Component {
       <div className ="row">
        {pins.map(pin =>( 
          <div className="column">
-         <img src={pin.thumbnailUrl}/>
-         <p>{pin.title}</p>
+         <img src={pin.webformatURL}/>
          <button>pin it!</button>
          </div>
        ))}
