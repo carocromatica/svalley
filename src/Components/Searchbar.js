@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import LoadPins from './Pins'
-import Cats from './Cats'
-import Watercolors from './Watercolors'
-import Design from './Design';
-import Art from './Art'
 
 class SearchBar extends Component {
 
