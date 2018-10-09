@@ -1,13 +1,13 @@
 {
   "main.css": "/svalley/static/css/main.e412470d.chunk.css",
-  "main.js": "/svalley/static/js/main.eb526103.chunk.js",
-  "main.js.map": "/svalley/static/js/main.eb526103.chunk.js.map",
-  "static/js/1.b4dddb86.chunk.js": "/svalley/static/js/1.b4dddb86.chunk.js",
-  "static/js/1.b4dddb86.chunk.js.map": "/svalley/static/js/1.b4dddb86.chunk.js.map",
+  "main.js": "/svalley/static/js/main.20c52cba.chunk.js",
+  "main.js.map": "/svalley/static/js/main.20c52cba.chunk.js.map",
+  "static/js/1.57e3a50b.chunk.js": "/svalley/static/js/1.57e3a50b.chunk.js",
+  "static/js/1.57e3a50b.chunk.js.map": "/svalley/static/js/1.57e3a50b.chunk.js.map",
   "runtime~main.js": "/svalley/static/js/runtime~main.9e6979fe.js",
   "runtime~main.js.map": "/svalley/static/js/runtime~main.9e6979fe.js.map",
   "static/css/main.e412470d.chunk.css.map": "/svalley/static/css/main.e412470d.chunk.css.map",
   "index.html": "/svalley/index.html",
-  "precache-manifest.2d8e2be186290e90dc283b08dbfbf225.js": "/svalley/precache-manifest.2d8e2be186290e90dc283b08dbfbf225.js",
+  "precache-manifest.6cb38c18c2d01c2229c40ab47c632bda.js": "/svalley/precache-manifest.6cb38c18c2d01c2229c40ab47c632bda.js",
   "service-worker.js": "/svalley/service-worker.js"
 }
