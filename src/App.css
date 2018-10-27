@@ -6,55 +6,12 @@
 body {
   margin: 0;
   font-family: Arial;
+  background: lightblue;
 }
 
 .content{
   margin:0 auto;
-  width: 98%;
-}
-
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex-fluid;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
-/* Create four equal columns that sits next to each other */
-.column {
-  -ms-flex: 15%; /* IE10 */
-  flex: 15%;
-  max-width: 15%;
-  background-color:#ecf0f1;
-  margin: 10px;
-  border-radius: 25px;
-}
-
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-  max-width: 250px;
-  height: auto;
-}
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-      -ms-flex: 50%;
-      flex: 50%;
-      max-width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-      -ms-flex: 100%;
-      flex: 100%;
-      max-width: 100%;
-  }
+  width: 90%;
 }
 
 
@@ -99,3 +56,76 @@ a.popup-cerrar {
   line-height: 1;
   color:#fff;
 }
+
+
+/* OTRO GRID*/
+
+/* Box-sizing reset: http://w3bits.com/?p=3225 */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* The Masonry Container */
+.masonry {
+  margin: 1.5em auto;
+  max-width: auto;
+  column-gap: 1.5em;
+}
+
+/* The Masonry Brick */
+.item {
+  background: white;
+  padding: 1em;
+  margin: 0 0 1.5em;
+  border-radius: 3%;
+}
+
+
+.item img {
+  vertical-align: middle;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 3%;
+}
+
+
+/* Masonry on large screens */
+@media only screen and (min-width: 1024px) {
+  .masonry {
+    column-count: 6;
+  }
+}
+
+/* Masonry on medium-sized screens */
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+/* Masonry on small screens */
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+  .masonry {
+    column-count: 2;
+  }
+
+  
+}
+
+
+/* Masonry on small screens */
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+  .masonry {
+    column-count: 2;
+  }
+
+  
+}
+
