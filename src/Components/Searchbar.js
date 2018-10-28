@@ -5,7 +5,7 @@ class SearchBar extends Component {
 
   state = {
     inputText: '',
-    amount: 50,
+    amount: 20,
     apiUrl: 'https://pixabay.com/api/',
     apiKey: '1721901-fa9bcc6ed3f879da0567a53bb',
     pins: [],
@@ -70,7 +70,7 @@ class SearchBar extends Component {
   };
 
   render() {
-    console.log(this.state.pins);
+
     let { pins } = this.state;
     return (
       <div>
@@ -81,11 +81,13 @@ class SearchBar extends Component {
           <button onClick={this.changearch.bind(this)}>Architecture</button>
           <div className="masonry">
             {pins.map(pin => (
+              <div>
               <div className="item">
-              <a href="#popup" class="popup-link" onClick={() => this.handleOpen(pin.webformatURL)} >
-                <img src={pin.webformatURL} />
+              <a href="#popup" className="popup-link" onClick={() => this.handleOpen(pin.webformatURL)} >
+                <img src={pin.webformatURL} alt={pin.user}/>
                 </a>
                 <p>{pin.user}</p>
+              </div>
               </div>
             ))}
           </div>
@@ -93,10 +95,10 @@ class SearchBar extends Component {
         <div>
         </div>
 
-        <div class="modal-wrapper" id="popup">
-          <div class="popup-contenedor">
+        <div className="modal-wrapper" id="popup">
+          <div className="popup-contenedor">
           <img src={this.state.currentImg} alt="" style={{ width: '50%' }} />
-            <a class="popup-cerrar" href="#">X</a>
+            <a className="popup-cerrar" href="#">X</a>
           </div>
         </div>
 
