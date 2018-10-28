@@ -5,7 +5,7 @@ class SearchBar extends Component {
 
   state = {
     inputText: '',
-    amount: 20,
+    amount: 30,
     apiUrl: 'https://pixabay.com/api/',
     apiKey: '1721901-fa9bcc6ed3f879da0567a53bb',
     pins: [],
@@ -25,6 +25,8 @@ class SearchBar extends Component {
     this.setState({ open: true, currentImg: pin });
   };
 
+
+
   changeW() {
     axios
       .get(
@@ -32,6 +34,8 @@ class SearchBar extends Component {
       .then(res => this.setState({ pins: res.data.hits }))
       .catch(err => console.log(err));
   }
+
+
 
   changedesign() {
     axios
@@ -41,14 +45,7 @@ class SearchBar extends Component {
       .catch(err => console.log(err));
   }
 
-  changearch() {
-    axios
-      .get(
-        `${this.state.apiUrl}/?key=${this.state.apiKey}&q=architecture&orientation=vertical&image_type=photo&per_page=${this.state.amount}&safesearch=true`)
-      .then(res => this.setState({ pins: res.data.hits }))
-      .catch(err => console.log(err));
-
-  }
+  
 
   onTextChange = e => {
     const input = e.target.value;
@@ -74,19 +71,20 @@ class SearchBar extends Component {
     let { pins } = this.state;
     return (
       <div>
+        <a href="index.html"><i class="fab fa-pinterest"></i></a>
         <input name="inputText" value={this.state.inputText} onChange={this.onTextChange} />
         <div>
-          <button onClick={this.changeW.bind(this)}>inicio</button>
+          <button onClick={this.changeW.bind(this)}>inicio BOTON PINTEREST</button>
           <button onClick={this.changedesign.bind(this)}>Design</button>
-          <button onClick={this.changearch.bind(this)}>Architecture</button>
           <div className="masonry">
             {pins.map(pin => (
-              <div>
+              <div key={pin.id}>
               <div className="item">
               <a href="#popup" className="popup-link" onClick={() => this.handleOpen(pin.webformatURL)} >
                 <img src={pin.webformatURL} alt={pin.user}/>
-                </a>
                 <p>{pin.user}</p>
+                </a>
+          
               </div>
               </div>
             ))}
