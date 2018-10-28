@@ -69,9 +69,15 @@ class SearchBar extends Component {
 
       <div>
         <header>
-          <a href="index.html"><i className="fab fa-pinterest"></i></a>
+          <a href="index.html"><i className="fab fa-pinterest logo"></i></a>
           <input name="inputText" value={this.state.inputText} onChange={this.onTextChange} placeholder="Buscar"/>
-      
+      <span>Inicio</span>
+      <span>Siguiendo</span>
+      <span>foto</span>
+      <span>Carolina</span>
+      <span> <i className="fas fa-comment"></i></span>
+      <span> <i className="fas fa-bell"></i></span>
+      <span> <i className="fas fa-bell"></i></span>
         </header>
         <div>  
           <button onClick={this.changedesign.bind(this)}>Fashion</button>
