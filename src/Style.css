@@ -7,17 +7,94 @@ h4{
   padding-top:10px;
 }
 
-.lefty{
-  width: 90%;
-  float: left;
-  display: inline;
+
+header{
+  border-bottom: 1px lightgrey solid;
+  height: 60px;
+  margin-top: 15px;
+}
+
+header i{
+  font-size: 2em;
+  padding: 0 20px 0 20px;
+  color:#c8232c;
+
+}
+
+input{
+  width: 70%;
+  height: 40px;
+  border: none;
+  background-color: #f5f5f5;
+  border-radius:5px;
+  padding-left:10px;
+  font-size: 1em;
   font-weight: bold;
 }
 
+
+
 .dots{
-
-
   color: gray;
   font-size: 0.8em;
+}
 
+
+/*modal*/
+
+#popup {
+  visibility: hidden;
+  opacity: 0;
+  margin-top: -300px;
+}
+#popup:target {
+  visibility:visible;
+  opacity: 1;
+  background-color: rgba(221, 217, 217, 1);
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:0;
+  z-index: 999;
+  transition:all 1s;
+}
+.popup-contenedor {
+  position: relative;
+  margin:7% auto;
+  padding:30px 50px;
+  background-color: #fafafa;
+  color:#333;
+  border-radius: 15px;
+  width:40%;
+
+}
+
+a.popup-cerrar {
+  position: absolute;
+  top:30px;
+  left:30px;
+  background-color: #333;
+  padding:7px 10px;
+  font-size: 20px;
+  text-decoration: none;
+  line-height: 1;
+  color:#fff;
+}
+
+.popleft{
+  width: 50%;
+  float: left;
+ 
+}
+
+.popright{
+  width: 50%;
+  float: right;
+  padding-left: 20px;
+}
+
+.popimg{
+  max-width: 350px;
 }

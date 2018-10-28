@@ -70,10 +70,15 @@ class SearchBar extends Component {
       <div>
         <header>
           <a href="index.html"><i className="fab fa-pinterest"></i></a>
-          <input name="inputText" value={this.state.inputText} onChange={this.onTextChange} />
-          <button onClick={this.changedesign.bind(this)}>Fashion</button>
+          <input name="inputText" value={this.state.inputText} onChange={this.onTextChange} placeholder="Buscar"/>
+      
         </header>
-
+        <div>  
+          <button onClick={this.changedesign.bind(this)}>Fashion</button>
+          <button onClick={this.changedesign.bind(this)}>Fashion</button>
+          <button onClick={this.changedesign.bind(this)}>Fashion</button>
+          <button onClick={this.changedesign.bind(this)}>Fashion</button>
+          </div>
         <div className="content">
 
           <div className="masonry">
@@ -96,9 +101,15 @@ class SearchBar extends Component {
         </div>
 
         <div className="modal-wrapper" id="popup">
+
+
+        <a className="popup-cerrar" href="#"><i className="fas fa-angle-left"></i> Volver</a>
           <div className="popup-contenedor">
-            <img src={this.state.currentImg} alt="" style={{ width: '50%' }} />
-            <a className="popup-cerrar" href="#">X</a>
+          
+     
+        <img className="popimg" src={this.state.currentImg} alt="pinterest"/>
+        <div className="popright">ARMAR ESTE DIV</div>
+          
           </div>
         </div>
 
