@@ -21,12 +21,6 @@ class SearchBar extends Component {
       .catch(err => console.log(err));
   }
 
-  handleOpen = pin => {
-    this.setState({ open: true, currentImg: pin });
-  };
-
-
-
   changeW() {
     axios
       .get(
@@ -34,8 +28,6 @@ class SearchBar extends Component {
       .then(res => this.setState({ pins: res.data.hits }))
       .catch(err => console.log(err));
   }
-
-
 
   changedesign() {
     axios
@@ -46,6 +38,10 @@ class SearchBar extends Component {
   }
 
   
+  handleOpen = pin => {
+    this.setState({ open: true, currentImg: pin });
+  };
+
 
   onTextChange = e => {
     const input = e.target.value;
@@ -70,37 +66,47 @@ class SearchBar extends Component {
 
     let { pins } = this.state;
     return (
+
       <div>
-        <a href="index.html"><i class="fab fa-pinterest"></i></a>
-        <input name="inputText" value={this.state.inputText} onChange={this.onTextChange} />
-        <div>
-          <button onClick={this.changeW.bind(this)}>inicio BOTON PINTEREST</button>
-          <button onClick={this.changedesign.bind(this)}>Design</button>
-          <div className="masonry">
-            {pins.map(pin => (
-              <div key={pin.id}>
-              <div className="item">
-              <a href="#popup" className="popup-link" onClick={() => this.handleOpen(pin.webformatURL)} >
-                <img src={pin.webformatURL} alt={pin.user}/>
-                <p>{pin.user}</p>
-                </a>
-          
-              </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div>
-        </div>
+        <header>
+          <a href="index.html"><i className="fab fa-pinterest"></i></a>
+          <input name="inputText" value={this.state.inputText} onChange={this.onTextChange} />
+          <button onClick={this.changedesign.bind(this)}>Fashion</button>
+        </header>
 
-        <div className="modal-wrapper" id="popup">
-          <div className="popup-contenedor">
-          <img src={this.state.currentImg} alt="" style={{ width: '50%' }} />
-            <a className="popup-cerrar" href="#">X</a>
-          </div>
-        </div>
+        <div className="content">
 
-      </div>
+
+
+      
+
+            <div className="masonry">
+              {pins.map(pin => (
+                <div key={pin.id}>
+                  <div className="item">
+                    <a href="#popup" className="popup-link" onClick={() => this.handleOpen(pin.webformatURL)} >
+                      <img src={pin.webformatURL} alt={pin.user} />
+                      <p>{pin.user}</p>
+                    </a>
+
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        
+         
+
+          <div className="modal-wrapper" id="popup">
+            <div className="popup-contenedor">
+              <img src={this.state.currentImg} alt="" style={{ width: '50%' }} />
+              <a className="popup-cerrar" href="#">X</a>
+            </div>
+          </div>
+
+        </div>
+   
     );
   }
 }
