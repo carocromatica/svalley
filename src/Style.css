@@ -1,0 +1,23 @@
+a{
+  text-decoration: none;
+  color:dimgrey;
+}
+
+h4{
+  padding-top:10px;
+}
+
+.lefty{
+  width: 90%;
+  float: left;
+  display: inline;
+  font-weight: bold;
+}
+
+.dots{
+
+
+  color: gray;
+  font-size: 0.8em;
+
+}

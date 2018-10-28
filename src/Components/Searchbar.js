@@ -37,7 +37,7 @@ class SearchBar extends Component {
       .catch(err => console.log(err));
   }
 
-  
+
   handleOpen = pin => {
     this.setState({ open: true, currentImg: pin });
   };
@@ -76,37 +76,34 @@ class SearchBar extends Component {
 
         <div className="content">
 
-
-
-      
-
-            <div className="masonry">
-              {pins.map(pin => (
-                <div key={pin.id}>
-                  <div className="item">
+          <div className="masonry">
+            {pins.map(pin => (
+              <div key={pin.id}>
+                <div className="item">
+                  <a href="#popup" className="popup-link" onClick={() => this.handleOpen(pin.webformatURL)} >
+                    <img src={pin.webformatURL} alt={pin.user} />
+                  </a>
+                  <span className="lefty">
                     <a href="#popup" className="popup-link" onClick={() => this.handleOpen(pin.webformatURL)} >
-                      <img src={pin.webformatURL} alt={pin.user} />
-                      <p>{pin.user}</p>
+                      {pin.user}
                     </a>
-
-                  </div>
+                  </span>
+                  <span className="dots"><i className="fas fa-ellipsis-h"></i></span>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-
-        
-         
-
-          <div className="modal-wrapper" id="popup">
-            <div className="popup-contenedor">
-              <img src={this.state.currentImg} alt="" style={{ width: '50%' }} />
-              <a className="popup-cerrar" href="#">X</a>
-            </div>
-          </div>
-
         </div>
-   
+
+        <div className="modal-wrapper" id="popup">
+          <div className="popup-contenedor">
+            <img src={this.state.currentImg} alt="" style={{ width: '50%' }} />
+            <a className="popup-cerrar" href="#">X</a>
+          </div>
+        </div>
+
+      </div>
+
     );
   }
 }
