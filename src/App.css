@@ -8,6 +8,8 @@
 .content{
   margin:0 auto;
   width: 90%;
+  position: relative;
+  padding-top: 80px;
 }
 
 /*grid*/

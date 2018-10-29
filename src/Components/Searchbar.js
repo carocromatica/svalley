@@ -21,21 +21,6 @@ class SearchBar extends Component {
       .catch(err => console.log(err));
   }
 
-  changeW() {
-    axios
-      .get(
-        `${this.state.apiUrl}/?key=${this.state.apiKey}&q=watercolors&orientation=vertical&image_type=photo&per_page=${this.state.amount}&safesearch=true`)
-      .then(res => this.setState({ pins: res.data.hits }))
-      .catch(err => console.log(err));
-  }
-
-  changedesign() {
-    axios
-      .get(
-        `${this.state.apiUrl}/?key=${this.state.apiKey}&q=fashion&orientation=vertical&image_type=photon&per_page=${this.state.amount}&order=popular&safesearch=true`)
-      .then(res => this.setState({ pins: res.data.hits }))
-      .catch(err => console.log(err));
-  }
 
 
   handleOpen = pin => {
@@ -70,21 +55,17 @@ class SearchBar extends Component {
       <div>
         <header>
           <a href="index.html"><i className="fab fa-pinterest logo"></i></a>
-          <input name="inputText" value={this.state.inputText} onChange={this.onTextChange} placeholder="Buscar"/>
-      <span>Inicio</span>
-      <span>Siguiendo</span>
-      <span>foto</span>
-      <span>Carolina</span>
-      <span> <i className="fas fa-comment"></i></span>
-      <span> <i className="fas fa-bell"></i></span>
-      <span> <i className="fas fa-bell"></i></span>
+          <input name="inputText" value={this.state.inputText} onChange={this.onTextChange} placeholder="Buscar" />
+          <span>Inicio</span>
+          <span>Siguiendo</span>
+          <span>Carolina</span>
+          <span> <i className="fas fa-comment"></i></span>
+          <span> <i className="fas fa-bell"></i></span>
+          <span> <i className="fas fa-ellipsis-h"></i></span>
         </header>
-        <div>  
-          <button onClick={this.changedesign.bind(this)}>Fashion</button>
-          <button onClick={this.changedesign.bind(this)}>Fashion</button>
-          <button onClick={this.changedesign.bind(this)}>Fashion</button>
-          <button onClick={this.changedesign.bind(this)}>Fashion</button>
-          </div>
+        <div>
+
+        </div>
         <div className="content">
 
           <div className="masonry">
@@ -107,15 +88,10 @@ class SearchBar extends Component {
         </div>
 
         <div className="modal-wrapper" id="popup">
-
-
-        <a className="popup-cerrar" href="#"><i className="fas fa-angle-left"></i> Volver</a>
+          <a className="popup-cerrar" href="#"><i className="fas fa-angle-left"></i> Volver</a>
           <div className="popup-contenedor">
-          
-     
-        <img className="popimg" src={this.state.currentImg} alt="pinterest"/>
-        <div className="popright">ARMAR ESTE DIV</div>
-          
+            <img className="popimg" src={this.state.currentImg} alt="pinterest" />
+            <div className="popright">ARMAR ESTE DIV</div>
           </div>
         </div>
 

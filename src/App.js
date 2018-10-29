@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import './Style.css';
+import './Modal.css';
 import SearchBar from './Components/Searchbar'
 
 
