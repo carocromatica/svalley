@@ -93,12 +93,10 @@ class SearchBar extends Component {
             <img className="popimg" src={this.state.currentImg} alt="pinterest" />
             <div className="popright">
             
-            <div className="popContent">
-            <button>Enviar</button>
-            <button>Guardar</button>
+            <div>
+            <button className="enviar">Enviar <i className="fas fa-upload"></i></button>
+            <button className="guardar">Guardar</button>
             </div>
-            <div className="popContent">www.pinterest.com</div>
-
             </div>
           </div>
         </div>

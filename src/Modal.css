@@ -62,13 +62,35 @@ border-bottom: 1px #ccc solid;
 }
 
 
-
-@media only screen and (min-width: 1024px) {
-  
+.enviar{
+  padding: 15px;
+  background-color: lightgray;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  margin: 5px;
 }
 
 
+.guardar{
+  padding: 15px;
+  background-color:#c8232c;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  margin: 5px;
+  float: right;
+  color: white;
+}
+
 @media only screen and (max-width: 1023px) and (min-width: 768px) {
+
+
+  .popright{
+    display: none;
+    }
 
 }
 
@@ -76,13 +98,19 @@ border-bottom: 1px #ccc solid;
 @media only screen and (max-width: 767px) and (min-width: 540px) {
   .popimg{
     max-width: 300px;
+    text-align: center;
   }
+  .popright{
+    display: none;
+    }
+
 }
 
 
 @media only screen and (max-width: 480px) and (min-width: 320px) {
   .popimg{
     max-width: 200px;
+    text-align: center;
   }
 
   .popright{
@@ -92,7 +120,7 @@ border-bottom: 1px #ccc solid;
   .popup-contenedor {
     position: relative;
     margin:20% auto;
-    padding:30px 50px;
+    padding:30px;
     background-color: #fafafa;
     color:#333;
     border-radius: 15px;
@@ -101,15 +129,10 @@ border-bottom: 1px #ccc solid;
   }
 
   a.popup-cerrar {
-    position: absolute;
+ 
     top:10px;
     left:10px;
-    background-color: #333;
-    padding:7px 10px;
-    font-size: 20px;
-    text-decoration: none;
-    line-height: 1;
-    color:#fff;
+
   }
 
 }
