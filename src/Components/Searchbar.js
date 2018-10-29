@@ -91,7 +91,15 @@ class SearchBar extends Component {
           <a className="popup-cerrar" href="#"><i className="fas fa-angle-left"></i> Volver</a>
           <div className="popup-contenedor">
             <img className="popimg" src={this.state.currentImg} alt="pinterest" />
-            <div className="popright">ARMAR ESTE DIV</div>
+            <div className="popright">
+            
+            <div className="popContent">
+            <button>Enviar</button>
+            <button>Guardar</button>
+            </div>
+            <div className="popContent">www.pinterest.com</div>
+
+            </div>
           </div>
         </div>
 
